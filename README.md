@@ -3,6 +3,15 @@ Windows:
 
 cleaning.exe
 
+directory path 
+
+[here we enter the path of the directory where the file to be deleted is] 
+
+file name 
+
+[here we enter the name of the file to delete]
+
+
 Linux: 
 
 ./dependencies.sh
