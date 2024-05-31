@@ -28,8 +28,8 @@ macOS:
 
 Termux:
 
-  install kali on 
-  termux
+  install kali or Ubuntu on 
+  termux 
   Installation link: https://github.com/MasterDevX/Termux-Kali
 
 then install 
