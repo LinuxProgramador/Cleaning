@@ -1,15 +1,57 @@
+
 from cryptography.fernet import Fernet
-import sys
-from os import remove,urandom
+from sys import argv,exit
+from os import remove
+from re import search
+
 
 #Herramienta de eliminacion segura de archivos en (Linux/Windows/macOS)
+
+
+
+def delete_secure(path):
+
+
+         try:
+
+            for _ in range(1):
+
+              key = Fernet.generate_key()
+              fernet = Fernet(key)
+              key = ""
+
+              with open(path,'rb') as read:
+                file_read=read.read()
+
+              encryption = fernet.encrypt(file_read)
+              fernet = ""
+
+              with open(path,'wb') as write:
+                write.write(encryption)
+
+
+            remove(path)
+            print("safely deleted file!")
+
+         except FileNotFoundError:
+             print("non-existent route!")
+             exit(2)
+
+         except PermissionError:
+                print("You do not have permissions on that file!")
+                exit(2)
+
+         return
+
+
 
 
 def main():
 
  try:
 
-   for input_user in sys.argv:
+   for input_user in argv:
+
       if input_user in ["-h","--help"]:
 
          print("Cleaning: is a tool that allows you to safely delete multimedia files.")
@@ -23,47 +65,33 @@ Help:
 
     -h --help  show help menu
                """)
-         sys.exit(2)
+         exit(2)
 
 
       elif input_user == "-f":
 
-         try:
-            path=input("path of the file delete: ")
-            salt = urandom(512)
-            key = Fernet.generate_key()
-            fernet = Fernet(key)
-            key = salt
 
-            file_local=open(path,'rb')
-            file_read=file_local.read()
-            file_local.close()
-            encryption = fernet.encrypt(file_read)
-            fernet = salt
+            path_directory,file_name=input("Enter the path where your file is: "),input("Enter file name: ")
+            pattern_quote = r"\'"
 
-            file_local_write=open(path,'wb')
-            file_local_write.write(encryption)
-            file_local_write.close()
 
-            remove(path)
-            print("safely deleted file!")
+            if search(pattern_quote, file_name):
 
-         except FileNotFoundError:
-             print("non-existent route!")
-             sys.exit(2)
+               file_name = file_name.replace("'", "", 2)
+               path = path_directory + file_name
 
-         except PermissionError:
-                print("You do not have permissions on that file!")
-                sys.exit(2)
+
+            path= path_directory + file_name
+            delete_secure(path)
 
 
  except KeyboardInterrupt:
           print()
-          sys.exit(2)
+          exit(2)
 
 
 
- return
+
 
 
 if __name__ == "__main__":
