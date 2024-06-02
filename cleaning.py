@@ -79,7 +79,8 @@ Help:
 
                file_name = file_name.replace("'", "", 2)
                path = path_directory + file_name
-
+               delete_secure(path)
+                     
             else:
                 path= path_directory + file_name
                 delete_secure(path)
