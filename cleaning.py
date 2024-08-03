@@ -1,8 +1,8 @@
 
 from cryptography.fernet import Fernet
-from sys import argv,exit
+from sys import argv
 from os import remove
-from re import search
+
 
 
 #Herramienta de eliminacion segura de archivos en (Linux/Windows/macOS)
@@ -29,8 +29,7 @@ def delete_secure(path):
 
 def main():
  try:
-   for input_user in argv:
-     if input_user in ["-h","--help"]:
+   if "-h" in argv or "--help" in argv:
          print("Cleaning: is a tool that allows you to safely delete multimedia files.")
          print("""
 Usage:
@@ -39,10 +38,10 @@ Usage:
 Help:
     -h --help  show help menu
                """)
-         exit(2)
-      elif input_user == "-f":
+         
+   elif "-f" in argv:
             path_directory,file_name=input("Enter the path where your file is: "),input("Enter file name: ")
-            pattern_quote = r"'"
+            "'","\""]
             if search(pattern_quote, file_name):
                file_name = file_name.replace("'", "", 2)
                path = path_directory + file_name
@@ -54,13 +53,13 @@ Help:
 
  except (KeyboardInterrupt,OEFError):
           print()
-          exit(2)
+          
  except FileNotFoundError:
           print("non-existent route!")
-          exit(2)
+          
  except PermissionError:
           print("You do not have permissions on that file!")
-          exit(2)
+          
 
 if __name__ == "__main__":
        main()
