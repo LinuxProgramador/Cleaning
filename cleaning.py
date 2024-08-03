@@ -20,8 +20,8 @@ def delete_secure(path):
               fernet = ""
               with open(path,'wb') as write:
                 write.write(encryption)
-            remove(path)
-            print("safely deleted file!")
+          remove(path)
+          print("safely deleted file!")
           return
 
 
