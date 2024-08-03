@@ -1,13 +1,10 @@
+#!/usr/bin/python3 
+
+#Herramienta de eliminacion segura de archivos en (Linux/Windows/macOS)
 
 from cryptography.fernet import Fernet
 from sys import argv
 from os import remove
-
-
-
-#Herramienta de eliminacion segura de archivos en (Linux/Windows/macOS)
-
-
 
 def delete_secure(path):
           for _ in range(1):
@@ -52,7 +49,7 @@ Help:
                 delete_secure(path)
 
 
- except (KeyboardInterrupt,OEFError):
+ except (KeyboardInterrupt,EOFError):
           print()
           
  except FileNotFoundError:
