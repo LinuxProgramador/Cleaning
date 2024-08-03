@@ -38,7 +38,8 @@ def main():
             show_help()
          
    elif "-f" in argv:
-            path_directory,file_name=input("Enter the path where your file is: "),input("Enter file name: ")
+            path_directory = input("Enter the path where your file is: ")
+            file_name = input("Enter file name: ")
             if "'" in file_name:
                 file_name = file_name.replace("'", "")
                 path = path_directory + file_name
