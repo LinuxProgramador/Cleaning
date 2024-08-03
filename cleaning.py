@@ -27,10 +27,9 @@ def delete_secure(path):
 def main():
  try:
    if "-h" in argv or "--help" in argv:
-         print("Cleaning: is a tool that allows you to safely delete multimedia files.")
          print("""
+Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
-    Examples:
     python3 cleaning -f  option to delete multimedia files
 Help:
     -h --help  show help menu
