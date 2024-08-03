@@ -37,9 +37,8 @@ Help:
          
    elif "-f" in argv:
             path_directory,file_name=input("Enter the path where your file is: "),input("Enter file name: ")
-            quotation_marks =["'","\""]
-            if file_name in quotation_marks:
-                file_name = file_name.replace(quotation_marks, "", 2)
+            if file_name in ["'"]:
+                file_name = file_name.replace("'", "")
                 path = path_directory + file_name
                 delete_secure(path)
                     
