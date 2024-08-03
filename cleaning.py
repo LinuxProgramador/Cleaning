@@ -51,7 +51,7 @@ def main():
 
 
  except (KeyboardInterrupt,EOFError):
-          print("\n operation canceled by user!")
+          print("\noperation canceled by user!")
           
  except FileNotFoundError:
           print("non-existent route!")
