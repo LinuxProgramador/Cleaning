@@ -41,11 +41,12 @@ Help:
          
    elif "-f" in argv:
             path_directory,file_name=input("Enter the path where your file is: "),input("Enter file name: ")
-            "'","\""]
-            if search(pattern_quote, file_name):
-               file_name = file_name.replace("'", "", 2)
-               path = path_directory + file_name
-               delete_secure(path)
+            quotation_marks =["'","\""]
+            if file_name in quotation_marks:
+               file_name = file_name.replace(quotation_marks, "", 2)
+                path = path_directory + file_name
+                delete_secure(path)
+                    
             else:
                 path= path_directory + file_name
                 delete_secure(path)
