@@ -19,21 +19,23 @@ def delete_secure(path):
                 write.write(encryption)
           remove(path)
           print("safely deleted file!")
-          return
+          
+          
 
-
-
-
-def main():
- try:
-   if "-h" in argv or "--help" in argv:
-         print("""
+def show_help():
+          print("""
 Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
     python3 cleaning -f  option to delete multimedia files
 Help:
     -h --help  show help menu
                """)
+
+
+def main():
+ try:
+   if "-h" in argv or "--help" in argv:
+            show_help()
          
    elif "-f" in argv:
             path_directory,file_name=input("Enter the path where your file is: "),input("Enter file name: ")
@@ -48,7 +50,7 @@ Help:
 
 
  except (KeyboardInterrupt,EOFError):
-          print()
+          print("operation canceled by user!")
           
  except FileNotFoundError:
           print("non-existent route!")
