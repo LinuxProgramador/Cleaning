@@ -23,13 +23,13 @@ python3 cleaning.py options [-h,--help,-f]
 
 macOS:
 
-     install the 
+  install the 
      
-    wine emulator and 
+  wine emulator and 
     
-    run 
+   run 
     
-    cleaning.exe
+   cleaning.exe
 
 Termux:
 
