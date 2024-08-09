@@ -10,11 +10,11 @@ def delete_secure(path):
           for _ in range(1):
               key = Fernet.generate_key()
               fernet = Fernet(key)
-              key = ""
+              key = None
               with open(path,'rb') as read:
                 file_read=read.read()
               encryption = fernet.encrypt(file_read)
-              fernet = ""
+              fernet = None
               with open(path,'wb') as write:
                 write.write(encryption)
           remove(path)
