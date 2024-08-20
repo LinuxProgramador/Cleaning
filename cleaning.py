@@ -4,16 +4,19 @@
 
 from cryptography.fernet import Fernet
 from sys import argv
-from os import remove
+from os import remove, urandom
 
 def delete_secure(path):
+          overwrite = urandom(512)
           for _ in range(1):
               key = Fernet.generate_key()
               fernet = Fernet(key)
+              key = overwrite
               del(key)
               with open(path,'rb') as read:
                 file_read=read.read()
               encryption = fernet.encrypt(file_read)
+              fernet = overwrite
               del(fernet)
               with open(path,'wb') as write:
                 write.write(encryption)
