@@ -31,6 +31,10 @@ python3 python3-pip
 
 python3 -m pip install cryptography
 
+./dependencies.sh
+
+python3 cleaning.py options [-h,--help,-f]
+
 macOS:
 
   install the 
@@ -41,31 +45,38 @@ macOS:
     
    cleaning.exe
 
-Termux:
 
-  install kali or Ubuntu on 
+Android:
+
+ termux:
+
+   install kali or Ubuntu on 
   
-  termux 
+   termux 
   
-  Installation link: https://github.com/MasterDevX/Termux-Kali
+   Installation link: https://github.com/MasterDevX/Termux-Kali
 
-then install 
+   then install 
 
-python3.11-venv 
+   python3.11-venv 
 
-and run this command at home
+   and run this command at home
 
-python3 -m venv path/to/venv
+   python3 -m venv path/to/venv
 
-to install cryptography
+   to install cryptography
 
-with path/to/venv/bin/pip install cryptography
+   with path/to/venv/bin/pip install cryptography
 
-to run cleaning.py
+   to run cleaning.py
 
-path/to/venv/bin/python3 cleaning.py options [-h,--help,-f]
+   path/to/venv/bin/python3 cleaning.py options [-h,--help,-f]
 
 
-Userland:
+ userland:
 
-just choose the Ubuntu distro 
+   just choose the Ubuntu distro 
+
+   ./dependencies.sh
+
+   python3 cleaning.py options [-h,--help,-f]
