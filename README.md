@@ -31,8 +31,6 @@ python3 python3-pip
 
 python3 -m pip install cryptography
 
-./dependencies.sh
-
 python3 cleaning.py options [-h,--help,-f]
 
 macOS:
@@ -58,7 +56,7 @@ Android:
 
    then install 
 
-   python3.11-venv 
+   python3.11-venv on kali
 
    and run this command at home
 
@@ -78,5 +76,6 @@ Android:
    just choose the Ubuntu distro 
 
    ./dependencies.sh
+   
 
    python3 cleaning.py options [-h,--help,-f]
