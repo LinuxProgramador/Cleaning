@@ -1,6 +1,6 @@
 Tool that allows you to delete multimedia files without the possibility of recovery.
 
-Program functionality: What it does is read the multimedia file in binary, then creates a secure key with the Fernet function and encrypts the multimedia file in binary in the ram, then overwrites the file with the same file already encoded and deletes it, guaranteeing that even if it is recovered, it is not readable
+Program functionality: What it does is read the multimedia file in binary, then creates a secure key with the Fernet function and encrypts the multimedia file in binary in the ram with AES-128, then overwrites the file with the same file already encoded and deletes it, guaranteeing that even if it is recovered, it is not readable
 
 Windows: 
 
