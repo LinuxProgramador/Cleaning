@@ -17,11 +17,19 @@ file name
 
 Linux: 
 
-Note: only in GNU/Linux distributions derived from Debian
+In GNU/Linux distributions derived from Debian
 
 ./dependencies.sh
 
 python3 cleaning.py options [-h,--help,-f]
+
+And in other GNU/Linux distros 
+
+Install dependencies
+
+python3 python3-pip 
+
+python3 -m pip install cryptography
 
 macOS:
 
@@ -56,3 +64,8 @@ with path/to/venv/bin/pip install cryptography
 to run cleaning.py
 
 path/to/venv/bin/python3 cleaning.py options [-h,--help,-f]
+
+
+Userland:
+
+just choose the Ubuntu distro 
