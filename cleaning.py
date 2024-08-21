@@ -22,7 +22,7 @@ def delete_secure(path):
                 write.write(encryption)
           remove(path)
           print("safely deleted file!")
-          
+          return
           
 
 def show_help():
