@@ -66,6 +66,8 @@ Android:
 
    with path/to/venv/bin/pip install cryptography
 
+   ./dependencies.sh
+
    to run cleaning.py
 
    path/to/venv/bin/python3 cleaning.py options [-h,--help,-f]
