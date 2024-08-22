@@ -4,15 +4,7 @@ Program functionality: What it does is read the multimedia file in binary, then 
 
 Windows: 
 
-cleaning.exe
-
-directory path 
-
-[here we enter the path of the directory where the file to be deleted is] 
-
-file name 
-
-[here we enter the name of the file to delete]
+install python3 from this link: https://www.python.org/downloads/
 
 
 Linux: 
