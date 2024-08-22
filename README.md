@@ -8,7 +8,9 @@ install python3 from this link: https://www.python.org/downloads/
 
 install pip from this link https://pip.pypa.io/en/stable/cli/pip_download/
 
+install the cryptography package with: pip install cryptography
 
+to run the program from the console: python cleaning.py [-h,--help,-f]
 
 Linux: 
 
