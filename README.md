@@ -22,7 +22,9 @@ Windows:
 
 Linux:
 
-  On GNU/Linux distributions derived from Debian:Run ./dependencies.sh
+  On GNU/Linux distributions derived from Debian:
+  
+  Run ./dependencies.sh
   
   Run: python3 cleaning.py [options] [-h,--help,-f]
 
