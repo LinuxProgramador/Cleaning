@@ -2,7 +2,7 @@
 
 from cryptography.fernet import Fernet
 from sys import argv
-from os import remove, urandom
+from os import remove, urandom,path
 
 def delete_secure(path):
           overwrite = urandom(512)
@@ -43,11 +43,11 @@ def main():
             file_name = input("Enter file name: ")
             if "'" in file_name:
                 file_name = file_name.replace("'", "")
-                path = path_directory + file_name
+                path = path.join(path_directory, file_name)
                 delete_secure(path)
                     
             else:
-                path= path_directory + file_name
+                path= path.join(path_directory, file_name)
                 delete_secure(path)
 
 
