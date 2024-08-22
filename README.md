@@ -8,9 +8,13 @@ install python3 from this link: https://www.python.org/downloads/
 
 install pip from this link https://pip.pypa.io/en/stable/cli/pip_download/
 
+then open cmd
+
 install the cryptography package with: pip install cryptography
 
 to run the program from the console: python cleaning.py [-h,--help,-f]
+
+
 
 Linux: 
 
@@ -30,6 +34,8 @@ python3 -m pip install cryptography
 
 python3 cleaning.py options [-h,--help,-f]
 
+
+
 macOS:
 
  Open terminal and run this command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -39,6 +45,8 @@ macOS:
  pip3 install criptography 
  
  python cleaning.py [-h,--help,-f]
+
+
 
  
 Android:
