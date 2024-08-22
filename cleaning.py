@@ -1,5 +1,3 @@
-#!/usr/bin/python3 
-
 #Herramienta de eliminacion segura de archivos en (Android/Linux/Windows/macOS)
 
 from cryptography.fernet import Fernet
