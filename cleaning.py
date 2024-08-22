@@ -2,7 +2,7 @@
 
 from cryptography.fernet import Fernet
 from sys import argv
-from os import remove, urandom,path
+from os import remove, urandom, path
 
 def delete_secure(path):
           overwrite = urandom(512)
