@@ -52,10 +52,10 @@ def main():
 
 
  except (KeyboardInterrupt,EOFError):
-          print("\noperation canceled by user!")
+          print("\nOperation canceled by user!")
           
  except FileNotFoundError:
-          print("non-existent route!")
+          print("Non-existent route!")
           
  except PermissionError:
           print("You do not have permissions on that file!")
