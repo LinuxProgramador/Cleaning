@@ -6,6 +6,9 @@ Windows:
 
 install python3 from this link: https://www.python.org/downloads/
 
+install pip from this link https://pip.pypa.io/en/stable/cli/pip_download/
+
+
 
 Linux: 
 
