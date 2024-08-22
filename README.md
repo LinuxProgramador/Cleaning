@@ -32,9 +32,15 @@ python3 cleaning.py options [-h,--help,-f]
 
 macOS:
 
+ Open terminal and run this command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+ brew install python 
+
+ pip3 install criptography 
  
+ python cleaning.py [-h,--help,-f]
 
-
+ 
 Android:
 
  termux:
