@@ -26,7 +26,7 @@ def delete_lite(path_local):
           #method not recommended because it does not guarantee complete overwriting 
           overwrite = urandom(2048)
           with open(path_local,'wb') as lite:
-             for _ in range(10):
+             for _ in range(700):
                     lite.write(overwrite)
              lite.truncate(2048 * 500)
           remove(path_local)
