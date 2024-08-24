@@ -28,6 +28,7 @@ def delete_lite(path_local):
           with open(path_local,'wb') as lite:
              for _ in range(501):
                     lite.write(overwrite)
+             lite.truncate(overwrite * 501)
 
 def show_help():
           print("""
