@@ -29,6 +29,9 @@ def delete_lite(path_local):
              for _ in range(501):
                     lite.write(overwrite)
              lite.truncate(2048 * 200)
+          remove(path_local)
+          print("File overwritten and deleted")
+
 
 def show_help():
           print("""
