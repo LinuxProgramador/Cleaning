@@ -24,11 +24,11 @@ def delete_secure(path_local):
           
 def delete_lite(path_local):
           #method not recommended because it does not guarantee complete overwriting 
-          overwrite = urandom(1024)
+          overwrite = urandom(2048)
           with open(path_local,'wb') as lite:
              for _ in range(501):
                     lite.write(overwrite)
-             lite.truncate(overwrite * 501)
+             lite.truncate(2048 * 200)
 
 def show_help():
           print("""
