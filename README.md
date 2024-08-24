@@ -17,7 +17,7 @@ Windows:
   
   To run the program from the console, 
   
-  use: python cleaning.py [-h,--help,-f]
+  use: python cleaning.py [-h,--help,-s,-l]
 
 
 Linux:
@@ -26,7 +26,7 @@ Linux:
   
   Run ./dependencies.sh
   
-  Run: python3 cleaning.py  [-h,--help,-f]
+  Run: python3 cleaning.py  [-h,--help,-s,-l]
 
   On other distributions GNU/Linux:
   
@@ -34,7 +34,7 @@ Linux:
   
   Execute: python3 -m pip install cryptography
   
-  Execute: python3 cleaning.py [-h,--help,-f]
+  Execute: python3 cleaning.py [-h,--help,-s,-l]
 
 
 
@@ -46,7 +46,7 @@ macOS:
   
   Install cryptography with: pip3 install cryptography
   
-  Run the program with: python cleaning.py [-h,--help,-f]
+  Run the program with: python cleaning.py [-h,--help,-s,-l]
 
 
 
@@ -62,7 +62,7 @@ Android:
   
   To install cryptography: path/to/venv/bin/pip install cryptography 
   
-  Run: path/to/venv/bin/python3 cleaning.py [-h,--help,- f]
+  Run: path/to/venv/bin/python3 cleaning.py [-h,--help,-s,-l]
 
  Userland:
  
@@ -72,4 +72,4 @@ Android:
   
   Execute the program with: 
   
-  python3 cleaning.py [-h,--help,-f]
+  python3 cleaning.py [-h,--help,-s,-l]
