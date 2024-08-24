@@ -30,7 +30,7 @@ def delete_lite(path_local):
     with open(path_local,'wb') as lite:
         for _ in range(1200):
             lite.write(overwrite)
-        lite.truncate(2048 * 500)
+        lite.truncate(1024)
     remove(path_local)
     print("File overwritten and deleted")
 
