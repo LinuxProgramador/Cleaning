@@ -33,7 +33,7 @@ def show_help():
           print("""
 Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
-    python3 cleaning.py -s  option to delete multimedia files
+    python3 cleaning.py -s  option that allows me to securely delete media files 
     python3 cleaning.py -l  option only when the multimedia file is very large and from a smartphone
     python3 cleaning.py [-h,--help]  print help menu
                  """)
