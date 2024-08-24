@@ -28,6 +28,7 @@ def show_help():
 Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
     python3 cleaning.py -f  option to delete multimedia files
+    python3 cleaning.py -l  option only when the multimedia file is very large and from a smartphone
     python3 cleaning.py [-h,--help]  print help menu
                  """)
 
@@ -46,7 +47,8 @@ def main():
             else:
                 path_local = path.join(path_directory, file_name)
                 delete_secure(path_local)
-
+   elif "-f" in argv:
+             
  except (KeyboardInterrupt,EOFError):
           print("\nOperation canceled by user!")
  except FileNotFoundError:
