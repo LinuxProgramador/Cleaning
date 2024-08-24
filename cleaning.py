@@ -22,12 +22,18 @@ def delete_secure(path_local):
           print("safely deleted file!")
           return
           
+def delete_lite(path_local):
+          #method not recommended because it does not guarantee complete overwriting 
+          overwrite = urandom(1024)
+          with open(path_local,'wb') as lite:
+             for _ in range(501):
+                    lite.write(overwrite)
 
 def show_help():
           print("""
 Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
-    python3 cleaning.py -f  option to delete multimedia files
+    python3 cleaning.py -s  option to delete multimedia files
     python3 cleaning.py -l  option only when the multimedia file is very large and from a smartphone
     python3 cleaning.py [-h,--help]  print help menu
                  """)
@@ -37,7 +43,7 @@ def main():
  try:
    if "-h" in argv or "--help" in argv:
             show_help()
-   elif "-f" in argv:
+   elif "-s" in argv:
             path_directory = input("Enter the path where your file is: ")
             file_name = input("Enter file name: ")
             if "'" in file_name:
@@ -47,8 +53,17 @@ def main():
             else:
                 path_local = path.join(path_directory, file_name)
                 delete_secure(path_local)
-   elif "-f" in argv:
-             
+   elif "-l" in argv:
+             path_directory = input("Enter the path where your file is: ")
+            file_name = input("Enter file name: ")
+            if "'" in file_name:
+                file_name = file_name.replace("'", "")
+                path_local = path.join(path_directory, file_name)
+                delete_lite(path_local)
+            else:
+                path_local = path.join(path_directory, file_name)
+                delete_lite(path_local)
+                      
  except (KeyboardInterrupt,EOFError):
           print("\nOperation canceled by user!")
  except FileNotFoundError:
