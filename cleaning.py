@@ -11,13 +11,13 @@ def delete_secure(path_local):
               fernet = Fernet(key)
               key = overwrite
               del(key)
-              with open(path_local,'rb') as read:
-                file_read=read.read()
+              with open(path_local,'rb') as read_local:
+                file_read=read_local.read()
               encryption = fernet.encrypt(file_read)
               fernet = overwrite
               del(fernet)
-              with open(path_local,'wb') as write:
-                write.write(encryption)
+              with open(path_local,'wb') as write_local:
+                write_local.write(encryption)
           remove(path_local)
           print("safely deleted file!")
           return
