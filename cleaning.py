@@ -28,6 +28,7 @@ def show_help():
 Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
     python3 cleaning.py -f  option to delete multimedia files
+    python3 cleaning.py [-h,--help]  print help menu
 Help:
     -h --help  show help menu
                """)
