@@ -4,6 +4,7 @@ Program functionality: Reads the multimedia file in binary,
 then creates a secure key with the Fernet function and encrypts the multimedia file in binary in RAM with AES-128 .
 It then overwrites the file with the already encrypted file and deletes it, ensuring that even if it is recovered, it is not readable.
 
+NOTE: The -l option does not guarantee overwriting as is the case with -s
 
 Installation instructions:
 
