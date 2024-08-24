@@ -26,7 +26,7 @@ Linux:
   
   Run ./dependencies.sh
   
-  Run: python3 cleaning.py [options] [-h,--help,-f]
+  Run: python3 cleaning.py  [-h,--help,-f]
 
   On other distributions GNU/Linux:
   
@@ -34,7 +34,7 @@ Linux:
   
   Execute: python3 -m pip install cryptography
   
-  Execute: python3 cleaning.py [options] [-h,--help,-f]
+  Execute: python3 cleaning.py [-h,--help,-f]
 
 
 
@@ -62,7 +62,7 @@ Android:
   
   To install cryptography: path/to/venv/bin/pip install cryptography 
   
-  Run: path/to/venv/bin/python3 cleaning.py [options] [-h,--help,- f]
+  Run: path/to/venv/bin/python3 cleaning.py [-h,--help,- f]
 
  Userland:
  
@@ -72,4 +72,4 @@ Android:
   
   Execute the program with: 
   
-  python3 cleaning.py [options] [-h,--help,-f]
+  python3 cleaning.py [-h,--help,-f]
