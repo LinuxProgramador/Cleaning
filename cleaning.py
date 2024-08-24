@@ -14,7 +14,7 @@ def delete_secure(path_local):
         with open(path_local,'rb') as read_local:
             file_read=read_local.read()
         encryption = fernet.encrypt(file_read)
-        file_read = overwrite
+        file_read = encryption
         del(file_read)
         fernet = overwrite
         del(fernet)
