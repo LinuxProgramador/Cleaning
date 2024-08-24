@@ -47,7 +47,7 @@ def data_entry():
    path_directory = input("Enter the path where your file is: ")                         
    file_name = input("Enter file name: ")
    if "'" in file_name:
-       file_name = file_name.replace("'", "")
+        file_name = file_name.replace("'", "")
         path_local = path.join(path_directory, file_name)
         return path_local
 
