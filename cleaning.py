@@ -33,7 +33,7 @@ def delete_lite(path_local):
         lite.truncate(1024)
     remove(path_local)
     print("File overwritten and deleted")
-
+    return
 
 def show_help():
     print("""
