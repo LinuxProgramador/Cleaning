@@ -5,7 +5,7 @@ from sys import argv
 from os import remove, urandom, path
 
 def delete_secure(path_local):
-    overwrite = urandom(512)
+    overwrite = urandom(1024)
     for _ in range(2):
         key = Fernet.generate_key()
         fernet = Fernet(key)
