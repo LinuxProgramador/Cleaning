@@ -75,7 +75,7 @@ def main():
  except PermissionError:
           print("You do not have permissions on that file!")
  except IsADirectoryError:        
-          print("Please enter a valid file name!")
+          print("Please enter a file name, not a directory!")
            
 if __name__ == "__main__":
        main()
