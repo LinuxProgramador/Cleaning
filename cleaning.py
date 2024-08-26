@@ -1,4 +1,4 @@
-#Herramienta de eliminacion segura de archivos multimedia en (Android/Linux/Windows/macOS)
+#Secure Media File Deletion Tool on (Android/Linux/Windows/macOS)
 
 from sys import argv
 from os import remove, urandom, path
