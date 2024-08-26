@@ -1,4 +1,3 @@
 
-sudo apt-get install python3 python3-pip -y
+sudo apt-get install python3 -y
 
-python3 -m pip install cryptography
