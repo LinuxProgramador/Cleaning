@@ -7,7 +7,7 @@ def delete_secure(path_local):
     size = path.getsize(path_local)
     with open(path_local,'wb') as lite:
         for _ in range(size):
-           lite.write(urandom(512))
+           lite.write(urandom(1))
     remove(path_local)
     print("File overwritten and deleted")
 
