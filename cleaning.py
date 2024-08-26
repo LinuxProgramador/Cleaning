@@ -4,15 +4,14 @@ from sys import argv
 from os import remove, urandom, path
         
 def delete_secure(path_local):
-  
-    overwrite = urandom(2048)
+    size = path.getsize(path_local)
     with open(path_local,'wb') as lite:
-        for _ in range(1000000):
+        for _ in range(size):
+            overwrite = urandom(512)
             lite.write(overwrite)
-        lite.truncate(1024)
     remove(path_local)
     print("File overwritten and deleted")
-    return
+
 
 def show_help():
     print("""
