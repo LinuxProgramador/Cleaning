@@ -12,15 +12,7 @@ Windows:
 
 
 Linux:
-
-  On GNU/Linux distributions derived from Debian:
-  
-  Run ./dependencies.sh
-  
-  Run: python3 cleaning.py  [-h,--help,-s]
-
-  On other distributions GNU/Linux:
-  
+ 
   Install dependencies (python3).
    
   Execute: python3 cleaning.py [-h,--help,-s]
@@ -39,9 +31,9 @@ macOS:
 
 Android:
 
- Termux:
+ Install termux from f-droid.org
  
- Install python3
+ Install python3 on termux
 
  Execute: python3 cleaning.py [-h,--help,-s]
   
