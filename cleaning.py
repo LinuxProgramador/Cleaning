@@ -52,7 +52,6 @@ def data_entry():
         file_name = file_name.replace("'", "")
         path_local = path.join(path_directory, file_name)
         return path_local
-
    else:
         path_local = path.join(path_directory, file_name)
         return path_local
