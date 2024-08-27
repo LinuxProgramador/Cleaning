@@ -67,10 +67,10 @@ def main():
                       
  except (KeyboardInterrupt,EOFError):
           print("\nOperation canceled by user!")
- except FileNotFoundError:
-          print("Non-existent route!")
- except PermissionError:
-          print("You do not have permissions on that file!")
+ except FileNotFoundError as e:
+          print(f"Non-existent route => {e}")
+ except PermissionError as p:
+          print(f"You do not have permissions on that file => {p}")
  except IsADirectoryError:        
           print("Please enter a file name, not a directory!")
            
