@@ -49,11 +49,11 @@ Android:
 
  Install termux from f-droid.org
  
- Install python3 on termux
-
  update packages:  apt update && apt upgrade -y
 
  Install git: apt install git -y
+
+ Install python3 on termux: apt install python3 -y
 
  git clone https://github.com/LinuxProgramador/Cleaning
 
