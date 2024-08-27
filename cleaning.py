@@ -66,7 +66,7 @@ def main():
        
                       
  except (KeyboardInterrupt,EOFError):
-          exit(1)
+          print('')
  except FileNotFoundError as e:
           print(f"Non-existent route => {e}")
  except PermissionError as p:
