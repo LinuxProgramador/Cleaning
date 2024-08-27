@@ -37,8 +37,8 @@ def delete_secure(path_local):
 
 
 def show_help():
+    print("Cleaning: is a tool that allows you to safely delete multimedia files.")
     print("""
-Cleaning: is a tool that allows you to safely delete multimedia files.
 Usage:
     python3 cleaning.py -s  option that allows me to securely delete multimedia files.
     python3 cleaning.py [-h,--help]  print help menu
