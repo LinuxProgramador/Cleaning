@@ -33,7 +33,7 @@ def delete_secure(path_local):
         for _ in range(salt):
           lite.write(urandom(2048))
     remove(path_local)
-    print("File overwritten and deleted")
+    print("File overwritten and deleted!")
 
 
 def show_help():
@@ -66,7 +66,7 @@ def main():
        
                       
  except (KeyboardInterrupt,EOFError):
-          print("\nOperation canceled by user!")
+          print("Operation canceled by user!")
  except FileNotFoundError as e:
           print(f"Non-existent route => {e}")
  except PermissionError as p:
