@@ -9,7 +9,9 @@ def delete_secure(path_local):
     sizes_mb = sizes_kb / 1024
     if size >= 0 and sizes_kb <= 1024:
          salt = 1000
-    elif sizes_mb >=1  and sizes_mb <= 235:
+    elif sizes_mb >= 1 and sizes_mb <= 59:
+            salt = 30000
+    elif sizes_mb >= 59  and sizes_mb <= 235:
           salt = 120000
     elif sizes_mb >= 235 and sizes_mb <= 587:
           salt = 300000
