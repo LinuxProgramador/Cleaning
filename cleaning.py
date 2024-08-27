@@ -6,8 +6,9 @@ from os import remove, urandom, path
 def delete_secure(path_local):
     size = path.getsize(path_local)
     with open(path_local,'wb') as lite:
-        for _ in range(size):
-           lite.write(urandom(1))
+        for _ in range(salt):
+           overwrite = urandom(2048)
+           lite.write(overwrite)
     remove(path_local)
     print("File overwritten and deleted")
 
