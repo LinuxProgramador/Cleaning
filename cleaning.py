@@ -25,23 +25,23 @@ def delete_secure(path_local):
     sizes_mb = sizes_kb / 1024
     if size >= 0 and sizes_kb <= 1024:
           salt = 1000
-    elif sizes_mb >= 1 and sizes_mb <= 59:
+    elif sizes_mb >= 1 and sizes_mb <= 59 and sizes_mb < disk_space():
           salt = 30000
-    elif sizes_mb >= 59  and sizes_mb <= 235:
+    elif sizes_mb >= 59  and sizes_mb <= 235 and sizes_mb < disk_space():
           salt = 120000
-    elif sizes_mb >= 235 and sizes_mb <= 587:
+    elif sizes_mb >= 235 and sizes_mb <= 587 and sizes_mb < disk_space():
           salt = 300000
-    elif  sizes_mb >=587  and sizes_mb <= 978:
+    elif  sizes_mb >=587  and sizes_mb <= 978 and sizes_mb < disk_space():
           salt = 500000
-    elif sizes_mb >= 978 and sizes_mb <= 2000:
+    elif sizes_mb >= 978 and sizes_mb <= 2000 and sizes_mb < disk_space():
           salt = 1000000
-    elif sizes_mb >= 2000 and sizes_mb <= 4400:
+    elif sizes_mb >= 2000 and sizes_mb <= 4400 and sizes_mb < disk_space():
           salt = 2300000
-    elif sizes_mb >= 4400 and sizes_mb <= 6200:
+    elif sizes_mb >= 4400 and sizes_mb <= 6200 and sizes_mb < disk_space():
           salt = 3200000
-    elif sizes_mb >= 6200 and sizes_mb <= 9600:
+    elif sizes_mb >= 6200 and sizes_mb <= 9600 and sizes_mb < disk_space():
           salt = 5000000
-    elif sizes_mb >= 9600 and sizes_mb <= 12000:
+    elif sizes_mb >= 9600 and sizes_mb <= 12000 and sizes_mb < disk_space():
           salt = 6200000
     else:
          print("You have exceeded the maximum allowed length which is 12G or you do not have enough disk space!")
