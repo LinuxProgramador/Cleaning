@@ -74,8 +74,7 @@ def main():
    if "-h" in argv or "--help" in argv:
             show_help()
    elif "-s" in argv:
-            path_local = data_entry()
-            delete_secure(path_local)
+            delete_secure(data_entry())
        
                       
  except (KeyboardInterrupt,EOFError):
