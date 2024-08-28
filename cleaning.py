@@ -1,8 +1,9 @@
 #Secure Media File Deletion Tool on (Android/Linux/Windows/macOS)
 
-from sys import argv
+from sys import argv, exit
 from os import remove, urandom, path
-
+from psutil import disk_usage
+from platform import system
 
 def disk_space():
     if system() in ["Linux","Darwin"]:
