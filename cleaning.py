@@ -2,7 +2,22 @@
 
 from sys import argv
 from os import remove, urandom, path
-        
+
+
+def disk_space():
+    if system() in ["Linux","Darwin"]:
+        disk_linux_and_macOS = disk_usage("/")
+        return f"{disk.free / 1024**3 :.2f}"
+
+    elif system() == "Windows":
+        disk_windows = disk_usage("C:\\")
+        return f"{disk.free / 1024**3 :.2f}"
+    else:
+         path = '/storage/emulated'
+         stat = statvfs(path)
+         return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
+
+
 def delete_secure(path_local):
     size = path.getsize(path_local)
     sizes_kb = size / 1024
