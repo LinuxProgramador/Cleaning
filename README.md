@@ -13,6 +13,8 @@ Windows:
   open the console, I have to go to the route where the Cleaning directory is
 
   cd Cleaning
+
+  pip install -r requirements.txt
   
   use: python cleaning.py [-h,--help,-s]
 
@@ -24,6 +26,8 @@ Linux:
   git clone https://github.com/LinuxProgramador/Cleaning
 
   cd Cleaning
+
+  pip install -r requirements.txt
   
   Execute: python3 cleaning.py [-h,--help,-s]
 
@@ -40,6 +44,8 @@ macOS:
   git clone https://github.com/LinuxProgramador/Cleaning
 
   then go into the Cleaning directory
+
+  pip install -r requirements.txt
   
   Run the program with: python cleaning.py [-h,--help,-s]
 
@@ -58,6 +64,8 @@ Android:
  git clone https://github.com/LinuxProgramador/Cleaning
 
  cd Cleaning
+
+ pip install -r requirements.txt
  
  Execute: python3 cleaning.py [-h,--help,-s]
   
