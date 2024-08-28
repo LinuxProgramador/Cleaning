@@ -9,10 +9,6 @@ def disk_space():
         path = '/'
         stat = statvfs(path)
         return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
-    elif system() == "Windows":
-         path = 'C:\\'
-         stat = statvfs(path)
-         return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
     else:
          path = '/storage/emulated'
          stat = statvfs(path)
