@@ -1,4 +1,4 @@
-#Secure Media File Deletion Tool on (Android/Linux/Windows/macOS)
+#Secure Media File Deletion Tool on (Android/Linux/macOS)
 
 from sys import argv, exit
 from os import remove, urandom, path, statvfs
@@ -54,7 +54,7 @@ def delete_secure(path_local):
 
 
 def show_help():
-    print("Cleaning 1.0: is a tool that allows you to safely delete multimedia files.")
+    print("Cleaning: is a tool that allows you to safely delete multimedia files.")
     print("""
 Usage:
     python3 cleaning.py -s  option that allows me to securely delete multimedia files.
