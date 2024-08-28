@@ -2,17 +2,17 @@
 
 from sys import argv, exit
 from os import remove, urandom, path, statvfs
-from psutil import disk_usage
 from platform import system
 
 def disk_space():
     if system() in ["Linux","Darwin"]:
-        disk_linux_and_macOS = disk_usage("/")
-        return f"{disk.free / 1024**3 :.2f}"
-
+        path = '/'
+        stat = statvfs(path)
+        return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
     elif system() == "Windows":
-        disk_windows = disk_usage("C:\\")
-        return f"{disk.free / 1024**3 :.2f}"
+         path = 'C:\\'
+         stat = statvfs(path)
+         return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
     else:
          path = '/storage/emulated'
          stat = statvfs(path)
