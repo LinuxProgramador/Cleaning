@@ -63,11 +63,11 @@ def data_entry():
    file_name = input("Enter file name: ")
    if "'" in file_name:
         file_name = file_name.replace("'", "")
-        path_local = path.join(path_directory, file_name)
-        return path_local
+        return path.join(path_directory, file_name)
+        
    else:
-        path_local = path.join(path_directory, file_name)
-        return path_local
+        return path.join(path_directory, file_name)
+        
 
 def main():
  try:
