@@ -19,7 +19,7 @@ Windows:
 
 Linux:
  
-  Install dependencies (python3,python3-pip,git)
+  Install dependencies (python3,git)
 
   git clone https://github.com/LinuxProgramador/Cleaning
 
@@ -53,7 +53,7 @@ Android:
 
  Install git: apt install git -y
 
- Install python3 on termux: apt install python3 python-pip -y
+ Install python3 on termux: apt install python3 -y
 
  git clone https://github.com/LinuxProgramador/Cleaning
 
