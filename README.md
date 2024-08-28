@@ -6,8 +6,6 @@ Windows:
 
   Install Python 3 from this link: https://www.python.org/downloads/
 
-  Install https://pip.pypa.io/en/stable/installation/
-  
   Download the zip file from the Github repository 
 
   extract it with WinRAR 
