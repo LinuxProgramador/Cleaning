@@ -1,7 +1,7 @@
 #Secure Media File Deletion Tool on (Android/Linux/Windows/macOS)
 
 from sys import argv, exit
-from os import remove, urandom, path
+from os import remove, urandom, path, statvfs
 from psutil import disk_usage
 from platform import system
 
@@ -45,6 +45,7 @@ def delete_secure(path_local):
           salt = 6200000
     else:
          print("You have exceeded the maximum allowed length which is 12G ")
+         exit(1)
     with open(path_local,'wb') as lite:
         for _ in range(salt):
           lite.write(urandom(2048))
