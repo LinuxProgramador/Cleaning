@@ -8,11 +8,11 @@ def disk_space():
     if system() in ["Linux","Darwin"]:
         path = '/'
         stat = statvfs(path)
-        return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
+        return float(f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}")
     else:
          path = '/storage/emulated'
          stat = statvfs(path)
-         return f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}"
+         return float(f"{stat.f_frsize * stat.f_bavail / (1024**3):.2f}")
 
 
 def delete_secure(path_local):
