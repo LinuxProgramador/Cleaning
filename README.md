@@ -5,7 +5,9 @@ Installation instructions:
 Windows:
 
   Install Python 3 from this link: https://www.python.org/downloads/
-   
+
+  Install https://pip.pypa.io/en/stable/installation/
+  
   Download the zip file from the Github repository 
 
   extract it with WinRAR 
@@ -21,13 +23,13 @@ Windows:
 
 Linux:
  
-  Install dependencies (python3,git)
+  Install dependencies (python3,python3-pip,git)
 
   git clone https://github.com/LinuxProgramador/Cleaning
 
   cd Cleaning
 
-  pip install -r requirements.txt
+  python3 -m pip install -r requirements.txt
   
   Execute: python3 cleaning.py [-h,--help,-s]
 
@@ -45,7 +47,7 @@ macOS:
 
   then go into the Cleaning directory
 
-  pip install -r requirements.txt
+  pip3 install -r requirements.txt
   
   Run the program with: python cleaning.py [-h,--help,-s]
 
@@ -59,7 +61,7 @@ Android:
 
  Install git: apt install git -y
 
- Install python3 on termux: apt install python3 -y
+ Install python3 on termux: apt install python3 python-pip -y
 
  git clone https://github.com/LinuxProgramador/Cleaning
 
