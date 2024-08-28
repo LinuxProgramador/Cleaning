@@ -44,7 +44,7 @@ def delete_secure(path_local):
     elif sizes_mb >= 9600 and sizes_mb <= 12000:
           salt = 6200000
     else:
-         print("You have exceeded the maximum allowed length which is 12G ")
+         print("You have exceeded the maximum allowed length which is 12G or you do not have enough disk space!")
          exit(1)
     with open(path_local,'wb') as lite:
         for _ in range(salt):
