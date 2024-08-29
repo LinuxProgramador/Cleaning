@@ -43,8 +43,9 @@ def delete_secure(path_local):
          print("You have exceeded the maximum allowed length which is 12G or you do not have enough disk space!")
          exit(1)
     with open(path_local,'wb') as lite:
+        overwrite = urandom(1048576)
         for _ in range(salt):
-          lite.write(urandom(1048576))
+          lite.write(overwrite)
     remove(path_local)
     print("File overwritten and deleted!")
 
