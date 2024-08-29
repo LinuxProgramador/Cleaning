@@ -9,11 +9,12 @@ def disk_space():
         path_disk = '/'
         stat = statvfs(path_disk)
         return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
-    else:
+    elif system() == 'Linux' and path.isdir('/data/data/com.termux/files'):
          path_disk = '/storage/emulated'
          stat = statvfs(path_disk)
          return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
-
+    else:
+         print("System not supported!")
 
 def delete_secure(path_local):
     size = path.getsize(path_local)
