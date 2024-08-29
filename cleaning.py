@@ -15,7 +15,8 @@ def disk_space():
          return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
     else:
          print("System not supported!")
-
+         exit(1)
+  
 def delete_secure(path_local):
     size = path.getsize(path_local)
     sizes_kb = size / 1024
