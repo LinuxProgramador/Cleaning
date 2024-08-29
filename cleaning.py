@@ -5,7 +5,7 @@ from os import remove, urandom, path, statvfs
 from platform import system
 
 def disk_space():
-    if system() in ["Linux","Darwin"]:
+    if system() in ["Linux","Darwin"] and not path.isdir('/data/data/com.termux/files'):
         path_disk = '/'
         stat = statvfs(path_disk)
         return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
