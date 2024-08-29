@@ -20,31 +20,31 @@ def delete_secure(path_local):
     sizes_kb = size / 1024
     sizes_mb = sizes_kb / 1024
     if size >= 0 and sizes_kb <= 1024:
-          salt = 1000
+          salt = 2
     elif sizes_mb >= 1 and sizes_mb <= 59 and sizes_mb < disk_space():
-          salt = 30000
+          salt = 60
     elif sizes_mb >= 59  and sizes_mb <= 235 and sizes_mb < disk_space():
-          salt = 120000
+          salt = 236
     elif sizes_mb >= 235 and sizes_mb <= 587 and sizes_mb < disk_space():
-          salt = 300000
+          salt = 588
     elif  sizes_mb >=587  and sizes_mb <= 978 and sizes_mb < disk_space():
-          salt = 500000
+          salt = 979
     elif sizes_mb >= 978 and sizes_mb <= 2000 and sizes_mb < disk_space():
-          salt = 1000000
+          salt = 2001
     elif sizes_mb >= 2000 and sizes_mb <= 4400 and sizes_mb < disk_space():
-          salt = 2300000
+          salt = 4401
     elif sizes_mb >= 4400 and sizes_mb <= 6200 and sizes_mb < disk_space():
-          salt = 3200000
+          salt = 6201
     elif sizes_mb >= 6200 and sizes_mb <= 9600 and sizes_mb < disk_space():
-          salt = 5000000
+          salt = 9601
     elif sizes_mb >= 9600 and sizes_mb <= 12000 and sizes_mb < disk_space():
-          salt = 6200000
+          salt = 12001
     else:
          print("You have exceeded the maximum allowed length which is 12G or you do not have enough disk space!")
          exit(1)
     with open(path_local,'wb') as lite:
         for _ in range(salt):
-          lite.write(urandom(2048))
+          lite.write(urandom(1048576))
     remove(path_local)
     print("File overwritten and deleted!")
 
