@@ -63,7 +63,6 @@ def main():
    elif "-s" in argv:
             delete_secure(data_entry())
        
-                      
  except (KeyboardInterrupt,EOFError):
           print('')
  except FileNotFoundError as e:
