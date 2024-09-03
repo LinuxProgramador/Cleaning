@@ -23,26 +23,10 @@ def delete_secure(path_local):
     sizes_mb = sizes_kb / 1024
     if size >= 0 and sizes_kb <= 1024:
           interactions = 2
-    elif sizes_mb >= 1 and sizes_mb <= 59 and sizes_mb < disk_space():
-          interactions = 61
-    elif sizes_mb >= 59  and sizes_mb <= 235 and sizes_mb < disk_space():
-          interactions = 237
-    elif sizes_mb >= 235 and sizes_mb <= 587 and sizes_mb < disk_space():
-          interactions = 589
-    elif  sizes_mb >=587  and sizes_mb <= 978 and sizes_mb < disk_space():
-          interactions = 980
-    elif sizes_mb >= 978 and sizes_mb <= 2000 and sizes_mb < disk_space():
-          interactions = 2002
-    elif sizes_mb >= 2000 and sizes_mb <= 4400 and sizes_mb < disk_space():
-          interactions = 4402
-    elif sizes_mb >= 4400 and sizes_mb <= 6200 and sizes_mb < disk_space():
-          interactions = 6202
-    elif sizes_mb >= 6200 and sizes_mb <= 9600 and sizes_mb < disk_space():
-          interactions = 9602
-    elif sizes_mb >= 9600 and sizes_mb <= 12000 and sizes_mb < disk_space():
-          interactions = 12002
+    elif sizes_mb < disk_space():
+          interactions = round(sizes_mb)   
     else:
-         print("You have exceeded the maximum allowed length which is 12G or you do not have enough disk space!")
+         print("You do not have enough disk space!")
          exit(1)
     with open(path_local,'wb') as file_overwrite:
         overwrite = urandom(1048576)
