@@ -10,7 +10,7 @@ def disk_space():
         stat = statvfs(path_disk)
         return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
     elif system() == 'Linux' and path.isdir('/data/data/com.termux/files'):
-         path_disk = '/storage/emulated'
+         path_disk = '/storage/emulated/'
          stat = statvfs(path_disk)
          return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
     else:
