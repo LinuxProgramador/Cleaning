@@ -58,9 +58,11 @@ def data_entry():
 def main():
  try:
    if "-h" in argv or "--help" in argv:
-            show_help()
+      show_help()
    elif "-s" in argv:
-            delete_secure(data_entry())
+      delete_secure(data_entry())
+   else:
+      print("Cleaning: invalid arguments. Try --help for more information.")
        
  except (KeyboardInterrupt,EOFError):
           print('')
