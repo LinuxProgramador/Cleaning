@@ -28,7 +28,7 @@ def delete_secure(path_local):
     else:
          print("You do not have enough disk space!")
          exit(1)
-    for _ in range(2):
+    for _ in range(4):
       with open(path_local,'wb') as file_overwrite:
         overwrite = urandom(1048576)
         for _ in range(interactions):
