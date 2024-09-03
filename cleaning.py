@@ -51,7 +51,6 @@ def data_entry():
    if "'" in file_name:
         file_name = file_name.replace("'", "")
         return path.join(path_directory, file_name)
-        
    else:
         return path.join(path_directory, file_name)
         
