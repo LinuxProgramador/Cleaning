@@ -1,33 +1,16 @@
-#Secure Media File Deletion Tool on (Android/Linux/macOS)
+#Secure Media File Deletion Tool on (Windows/Android/Linux/macOS)
 
-from sys import argv, exit
-from os import remove, urandom, path, statvfs
-from platform import system
-
-def disk_space():
-    if system() in ["Linux","Darwin"] and not path.isdir('/data/data/com.termux/files'):
-        path_disk = '/'
-        stat = statvfs(path_disk)
-        return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
-    elif system() == 'Linux' and path.isdir('/data/data/com.termux/files'):
-         path_disk = '/storage/emulated/'
-         stat = statvfs(path_disk)
-         return float(f"{stat.f_frsize * stat.f_bavail / (1024**2):.2f}")
-    else:
-         print("System not supported!")
-         exit(1)
-  
+from sys import argv
+from os import remove, urandom, path
+ 
 def delete_secure(path_local):
     size = path.getsize(path_local)
     sizes_kb = size / 1024
     sizes_mb = sizes_kb / 1024
     if size >= 0 and sizes_kb <= 1024:
           interactions = 2
-    elif sizes_mb < disk_space():
-          interactions = round(sizes_mb)   
     else:
-         print("You do not have enough disk space!")
-         exit(1)
+          interactions = round(sizes_mb)   
     for _ in range(4):
       with open(path_local,'wb') as file_overwrite:
         overwrite = urandom(1048576)
