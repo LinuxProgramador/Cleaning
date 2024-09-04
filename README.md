@@ -2,6 +2,20 @@ Tool that allows you to delete multimedia files without the possibility of recov
 
 Installation instructions:
 
+Windows:
+
+Download python3 from this link: https://www.python.org/downloads/windows/ 
+
+after downloading the script from Github repository 
+
+unzip with WinRAR 
+
+open the cmd and go to the path where the Cleaning direct is 
+
+cd Cleaning
+
+usage: python cleanup.py [-h,--help,-s]
+
 Linux:
  
   Install dependencies (python3,git)
