@@ -14,7 +14,7 @@ open the cmd and go to the path where the Cleaning direct is
 
 cd Cleaning
 
-usage: python cleanup.py [-h,--help,-s]
+usage: python cleaning.py [-h,--help,-s]
 
 Linux:
  
