@@ -1,5 +1,4 @@
-Tool: Secure File Eraser
-This tool allows you to securely delete multimedia files, ensuring they cannot be recovered.
+Cleaning: This tool allows you to securely delete multimedia files, ensuring they cannot be recovered.
 
 Installation Instructions
 
