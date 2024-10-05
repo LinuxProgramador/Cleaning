@@ -4,6 +4,9 @@ from sys import argv
 from os import remove, urandom, path
  
 def delete_secure(path_local):
+    '''
+      Files are overwritten for later overwriting
+    '''
     size = path.getsize(path_local)
     sizes_kb = size / 1024
     sizes_mb = sizes_kb / 1024
@@ -21,6 +24,9 @@ def delete_secure(path_local):
 
 
 def show_help():
+    '''
+       Help menu is set 
+    '''
     print("Cleaning: is a tool that allows you to safely delete multimedia files.")
     print("""
 Usage:
@@ -29,7 +35,10 @@ Usage:
           """)
 
 
-def data_entry():                                                                                 
+def data_entry(): 
+   '''
+     Validates the existence of quotes in file names 
+   '''
    path_directory = input("Enter the path where your file is: ")                         
    file_name = input("Enter file name: ")
    if "'" in file_name or "\"" in file_name:
@@ -40,6 +49,9 @@ def data_entry():
         
 
 def main():
+ '''
+   Performs tasks based on what the user selects 
+ '''
  try:
    if "-h" in argv or "--help" in argv:
       show_help()
