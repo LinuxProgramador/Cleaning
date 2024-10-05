@@ -5,7 +5,7 @@ from os import remove, urandom, path
  
 def delete_secure(path_local):
     '''
-      Files are overwritten for later overwriting
+      Files are overwritten for later remove
     '''
     size = path.getsize(path_local)
     sizes_kb = size / 1024
