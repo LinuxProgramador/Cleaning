@@ -1,7 +1,7 @@
 #Secure Media File Deletion Tool on (Windows/Android/Linux/macOS)
 
 from sys import argv
-from os import remove, urandom, path
+from os import remove, urandom, path, fsync
  
 def delete_secure(path_local):
     '''
@@ -19,6 +19,8 @@ def delete_secure(path_local):
         overwrite = urandom(1048576)
         for _ in range(interactions):
           file_overwrite.write(overwrite)
+          file_overwrite.flush()
+          fsync(file_overwrite.fileno())
     remove(path_local)
     print("File overwritten and deleted!")
 
