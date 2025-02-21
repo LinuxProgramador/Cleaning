@@ -94,7 +94,7 @@ def main():
  except OSError as o:
           print(f"Error: {o}")
  except Exception as F:
-          print("Type Error: {F}")
+          print(f"Type Error: {F}")
 
 if __name__ == "__main__":
        main()
