@@ -58,8 +58,6 @@ def main():
    Performs tasks based on what the user selects
  '''
  global confirm_delete,num_overwrites
- confirm_delete = "y"
- num_overwrites = 4
  file_name = path_directory = ''
 
  try:
@@ -68,14 +66,22 @@ def main():
        
    elif "-s" in argv:
       num_overwrites = int(input("Number of overwrites: "))
+      if not num_overwrites or not 1 <= num_overwrites <= 15:
+           num_overwrites = 4
       confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
+      if not confirm_delete:
+           confirm_delete = "y"
       delete_secure(data_entry(file_name,path_directory))
        
    elif "-R" in argv:
       num_overwrites = int(input("Number of overwrites: "))
+      if not num_overwrites or not 1 <= num_overwrites <= 15:
+           num_overwrites = 4
       confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
+      if not confirm_delete:
+           confirm_delete = "y"
       path_directory = input("Enter the path of the files to delete securely: ")
-      files = listdir(path_directory)
+      files = [file for file in listdir(path_directory) if path.isfile(path.join(path_directory,file))]
       for file_name in files:
           delete_secure(data_entry(file_name,path_directory))
           
