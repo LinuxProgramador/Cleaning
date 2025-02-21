@@ -3,11 +3,16 @@
 from sys import argv
 from os import remove, urandom, path, fsync, listdir
 
-
+global counter,confirm_delete_old,num_overwrites_old
+counter = 0
 def delete_secure(path_local):
     '''  Files are overwritten for later remove '''
-    confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
-    num_overwrites = int(input("Number of overwrites: "))
+    if counter == 0:
+      confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
+      num_overwrites = int(input("Number of overwrites: "))
+    else:
+      confirm_delete = confirm_delete_old
+      num_overwrites = num_overwrites_old 
     num_overwrites = 4 if not num_overwrites or not 1 <= num_overwrites <= 15 else num_overwrites
     comfirm_delete = "y" if not confirm_delete else confirm_delete
     size = path.getsize(path_local)
@@ -26,8 +31,9 @@ def delete_secure(path_local):
           fsync(file_overwrite.fileno())
     if confirm_delete == "y":
        remove(path_local)
-
-
+    confirm_delete_old = confirm_delete
+    num_overwrites_old = num_overwrites
+    
 def show_help():
     ''' Help menu is set '''
     print("Cleaning: is a tool that allows you to safely delete multimedia files.")
@@ -63,7 +69,8 @@ def main():
       path_directory = input("Enter the path of the files to delete securely: ")
       files = [file for file in listdir(path_directory) if path.isfile(path.join(path_directory,file))]
       for file_name in files:
-          delete_secure(data_entry(file_name,path_directory))          
+          delete_secure(data_entry(file_name,path_directory))  
+          counter += 1
    else:
       print("Cleaning: invalid arguments. Try --help for more information.")
 
