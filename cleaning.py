@@ -5,15 +5,11 @@ from os import remove, urandom, path, fsync, listdir
 
 
 def delete_secure(path_local):
-    '''
-      Files are overwritten for later remove
-    '''
+    '''  Files are overwritten for later remove '''
     confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
     num_overwrites = int(input("Number of overwrites: "))
-    if not num_overwrites or not 1 <= num_overwrites <= 15:
-           num_overwrites = 4
-    if not confirm_delete:
-           confirm_delete = "y"
+    num_overwrites = 4 if not num_overwrites or not 1 <= num_overwrites <= 15 else num_overwrites
+    comfirm_delete = "y" if not confirm_delete else confirm_delete
     size = path.getsize(path_local)
     sizes_kb = size / 1024
     sizes_mb = sizes_kb / 1024
@@ -33,9 +29,7 @@ def delete_secure(path_local):
 
 
 def show_help():
-    '''
-       Help menu is set
-    '''
+    ''' Help menu is set '''
     print("Cleaning: is a tool that allows you to safely delete multimedia files.")
     print("""
 Usage:
@@ -46,9 +40,7 @@ Usage:
 
 
 def data_entry(file_name,path_directory):
-   '''
-     Validates the existence of quotes in file names
-   '''
+   ''' Validates the existence of quotes in file names '''
    if not file_name:
      path_directory = input("Enter the path where your file is: ")
      file_name = input("Enter file name: ")
@@ -60,23 +52,18 @@ def data_entry(file_name,path_directory):
 
 
 def main():
- '''
-   Performs tasks based on what the user selects
- '''
+ ''' Performs tasks based on what the user select '''
  file_name = path_directory = ''
  try:
-   if "-h" in argv or "--help" in argv:
+   if any(help in argv for help in ["-h","--help"])
       show_help()
-       
    elif "-s" in argv:
       delete_secure(data_entry(file_name,path_directory))
-       
    elif "-R" in argv:
       path_directory = input("Enter the path of the files to delete securely: ")
       files = [file for file in listdir(path_directory) if path.isfile(path.join(path_directory,file))]
       for file_name in files:
-          delete_secure(data_entry(file_name,path_directory))
-          
+          delete_secure(data_entry(file_name,path_directory))          
    else:
       print("Cleaning: invalid arguments. Try --help for more information.")
 
