@@ -55,7 +55,7 @@ def main():
  ''' Performs tasks based on what the user select '''
  file_name = path_directory = ''
  try:
-   if any(help in argv for help in ["-h","--help"])
+   if any(help in argv for help in ["-h","--help"]):
       show_help()
    elif "-s" in argv:
       delete_secure(data_entry(file_name,path_directory))
