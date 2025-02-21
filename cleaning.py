@@ -8,6 +8,12 @@ def delete_secure(path_local):
     '''
       Files are overwritten for later remove
     '''
+    confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
+    num_overwrites = int(input("Number of overwrites: "))
+    if not num_overwrites or not 1 <= num_overwrites <= 15:
+           num_overwrites = 4
+    if not confirm_delete:
+           confirm_delete = "y"
     size = path.getsize(path_local)
     sizes_kb = size / 1024
     sizes_mb = sizes_kb / 1024
@@ -57,29 +63,15 @@ def main():
  '''
    Performs tasks based on what the user selects
  '''
- global confirm_delete,num_overwrites
  file_name = path_directory = ''
-
  try:
    if "-h" in argv or "--help" in argv:
       show_help()
        
    elif "-s" in argv:
-      num_overwrites = int(input("Number of overwrites: "))
-      if not num_overwrites or not 1 <= num_overwrites <= 15:
-           num_overwrites = 4
-      confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
-      if not confirm_delete:
-           confirm_delete = "y"
       delete_secure(data_entry(file_name,path_directory))
        
    elif "-R" in argv:
-      num_overwrites = int(input("Number of overwrites: "))
-      if not num_overwrites or not 1 <= num_overwrites <= 15:
-           num_overwrites = 4
-      confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
-      if not confirm_delete:
-           confirm_delete = "y"
       path_directory = input("Enter the path of the files to delete securely: ")
       files = [file for file in listdir(path_directory) if path.isfile(path.join(path_directory,file))]
       for file_name in files:
