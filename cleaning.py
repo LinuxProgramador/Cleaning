@@ -65,12 +65,12 @@ def main():
  try:
    if "-h" in argv or "--help" in argv:
       show_help()
+       
    elif "-s" in argv:
       num_overwrites = int(input("Number of overwrites: "))
       confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
       delete_secure(data_entry(file_name,path_directory))
-
-
+       
    elif "-R" in argv:
       num_overwrites = input("Number of overwrites: ")
       confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
@@ -78,8 +78,7 @@ def main():
       files = listdir(path_directory)
       for file_name in files:
           delete_secure(data_entry(file_name,path_directory))
-
-
+          
    else:
       print("Cleaning: invalid arguments. Try --help for more information.")
 
@@ -91,8 +90,8 @@ def main():
           print(f"You do not have permissions on that file => {p}")
  except IsADirectoryError:
           print("Please enter a file name, not a directory!")
- except Exception as F:
-          print(f"Type Error: {F}")
+ except Exception as f:
+          print(f"Type Error: {f}")
 
 if __name__ == "__main__":
        main()
