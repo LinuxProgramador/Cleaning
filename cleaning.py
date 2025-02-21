@@ -72,7 +72,7 @@ def main():
       delete_secure(data_entry(file_name,path_directory))
        
    elif "-R" in argv:
-      num_overwrites = input("Number of overwrites: ")
+      num_overwrites = int(input("Number of overwrites: "))
       confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
       path_directory = input("Enter the path of the files to delete securely: ")
       files = listdir(path_directory)
