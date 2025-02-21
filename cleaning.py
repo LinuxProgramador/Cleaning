@@ -16,7 +16,7 @@ def delete_secure(path_local):
     else:
       confirm_delete = confirm_delete_old
       num_overwrites = num_overwrites_old 
-    num_overwrites = 4 if not num_overwrites or not (1 <= num_overwrites <= 15) else num_overwrites
+    num_overwrites = 4 if not (1 <= num_overwrites <= 15) else num_overwrites
     confirm_delete = "y" if not confirm_delete else confirm_delete
     size = path.getsize(path_local)
     sizes_kb = size / 1024
