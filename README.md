@@ -16,7 +16,7 @@ Windows:
 4. Open the Command Prompt (cmd) and navigate to the directory where the script was extracted.
 
 
-5. In the command prompt, run the program using the command: python cleaning.py followed by any of the optional flags (-h for help, --help for detailed information, or -s to start).
+5. In the command prompt, run the program using the command: python cleaning.py followed by any of the optional flags (-h for help, --help for detailed information, or [-s,-R] to start).
 
 
 
@@ -31,7 +31,7 @@ Linux:
 3. Navigate to the extracted directory.
 
 
-4. Run the program using Python 3 with optional flags (-h for help, --help for detailed information, or -s to start).
+4. Run the program using Python 3 with optional flags (-h for help, --help for detailed information, or [-s,-R] to start).
 
 
 
@@ -52,7 +52,7 @@ macOS:
 5. Navigate to the Cleaning directory.
 
 
-6. Run the program using Python with optional flags (-h for help, --help for detailed information, or -s to start).
+6. Run the program using Python with optional flags (-h for help, --help for detailed information, or [-s,-R] to start).
 
 
 
@@ -73,5 +73,5 @@ Android (via Termux):
 5. Navigate to the Cleaning directory.
 
 
-6. Run the program using Python 3 with optional flags (-h for help, --help for detailed information, or -s to start).
+6. Run the program using Python 3 with optional flags (-h for help, --help for detailed information, or [-s,-R] to start).
   
