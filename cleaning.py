@@ -91,8 +91,6 @@ def main():
           print(f"You do not have permissions on that file => {p}")
  except IsADirectoryError:
           print("Please enter a file name, not a directory!")
- except OSError as o:
-          print(f"Error: {o}")
  except Exception as F:
           print(f"Type Error: {F}")
 
