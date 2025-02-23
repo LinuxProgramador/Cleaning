@@ -11,7 +11,7 @@ def delete_secure(path_local):
     '''  Files are overwritten for later remove '''
     global counter,confirm_delete_old,num_overwrites_old
     if counter == 0:
-      confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ")
+      confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ").strip().lower()
       num_overwrites = int(input("Number of overwrites: "))
     else:
       confirm_delete = confirm_delete_old
@@ -52,8 +52,8 @@ Usage:
 def data_entry(file_name,path_directory):
    ''' Validates the existence of quotes in file names '''
    if not file_name:
-     path_directory = input("Enter the path where your file is: ")
-     file_name = input("Enter file name: ")
+     path_directory = input("Enter the path where your file is: ").strip()
+     file_name = input("Enter file name: ").strip()
    if "'" in file_name or "\"" in file_name:
         file_name = file_name.replace("'", "").replace("\"", "")
         return path.join(path_directory, file_name)
@@ -70,7 +70,7 @@ def main():
    elif "-s" in argv:
       delete_secure(data_entry(file_name,path_directory))
    elif "-R" in argv:
-      path_directory = input("Enter the path of the files to delete securely: ")
+      path_directory = input("Enter the path of the files to delete securely: ").strip()
       files = [file for file in listdir(path_directory) if path.isfile(path.join(path_directory,file))]
       for file_name in files:
           delete_secure(data_entry(file_name,path_directory))         
