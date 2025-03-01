@@ -1,5 +1,6 @@
 #Secure Media File Deletion Tool on (Windows/Android/Linux/macOS)
 
+from math import ceil
 from sys import argv
 from os import remove, urandom, path, fsync, listdir
 
@@ -24,7 +25,7 @@ def delete_secure(path_local):
     if size >= 0 and sizes_kb <= 1024:
           interactions = 2
     else:
-          interactions = round(sizes_mb)
+          interactions = ceil(sizes_mb)
     for _ in range(num_overwrites):
       with open(path_local,'wb') as file_overwrite:
         overwrite = urandom(1048576)
