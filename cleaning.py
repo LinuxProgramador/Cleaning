@@ -31,8 +31,8 @@ def delete_secure(path_local):
         overwrite = urandom(1048576)
         for _ in range(interactions):
           file_overwrite.write(overwrite)
-          file_overwrite.flush()
-          fsync(file_overwrite.fileno())
+        file_overwrite.flush()
+        fsync(file_overwrite.fileno())
     if confirm_delete == "y":
        remove(path_local)
     confirm_delete_old = confirm_delete
