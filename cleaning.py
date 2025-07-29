@@ -11,30 +11,40 @@ counter = 0
 def delete_secure(path_local):
     '''  Files are overwritten for later remove '''
     global counter,confirm_delete_old,num_overwrites_old
+    
     if counter == 0:
       confirm_delete = input("Do you want to remove the files after overwriting them (y/n): ").strip().lower()
       num_overwrites = int(input("Number of overwrites: "))
+        
     else:
       confirm_delete = confirm_delete_old
       num_overwrites = num_overwrites_old 
+        
     num_overwrites = 4 if not (1 <= num_overwrites <= 15) else num_overwrites
     confirm_delete = "y" if not confirm_delete else confirm_delete
     size = path.getsize(path_local)
     sizes_kb = size / 1024
     sizes_mb = sizes_kb / 1024
+    
     if size >= 0 and sizes_kb <= 1024:
           interactions = 2
+        
     else:
           interactions = ceil(sizes_mb)
+        
     for _ in range(num_overwrites):
       with open(path_local,'wb') as file_overwrite:
         overwrite = urandom(1048576)
+          
         for _ in range(interactions):
           file_overwrite.write(overwrite)
+            
         file_overwrite.flush()
         fsync(file_overwrite.fileno())
+          
     if confirm_delete == "y":
        remove(path_local)
+        
     confirm_delete_old = confirm_delete
     num_overwrites_old = num_overwrites
     counter += 1
@@ -55,9 +65,11 @@ def data_entry(file_name,path_directory):
    if not file_name:
      path_directory = input("Enter the path where your file is: ").strip()
      file_name = input("Enter file name: ").strip()
+       
    if "'" in file_name or "\"" in file_name:
         file_name = file_name.replace("'", "").replace("\"", "")
         return path.join(path_directory, file_name)
+       
    else:
         return path.join(path_directory, file_name)
 
@@ -68,13 +80,16 @@ def main():
  try:
    if any(help in argv for help in ["-h","--help"]):
       show_help()
+       
    elif "-s" in argv:
       delete_secure(data_entry(file_name,path_directory))
+       
    elif "-R" in argv:
       path_directory = input("Enter the path of the files to delete securely: ").strip()
       files = [file for file in listdir(path_directory) if path.isfile(path.join(path_directory,file))]
       for file_name in files:
-          delete_secure(data_entry(file_name,path_directory))         
+          delete_secure(data_entry(file_name,path_directory))   
+          
    else:
       print("Cleaning: invalid arguments. Try --help for more information.")
 
