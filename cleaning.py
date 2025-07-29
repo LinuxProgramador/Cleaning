@@ -107,7 +107,6 @@ def main():
 if __name__ == "__main__":
        main()
 
-__name__="Cleaning"
 __version__="1.0"
 __author__="JP Rojas"
 __status__="Finish"
