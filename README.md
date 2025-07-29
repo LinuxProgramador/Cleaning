@@ -1,5 +1,7 @@
 Cleaning: This tool allows you to securely delete multimedia files, ensuring they cannot be recovered.
 
+WARNING: Due to the nature of data management on SSDs, there is no reliable guarantee that deleted data can be securely and completely erased.
+
 Installation Instructions
 
 Windows:
